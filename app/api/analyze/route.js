@@ -23,28 +23,27 @@ export async function POST(req) {
          text: `
 You are an agricultural expert.
 
-Analyze this crop image and return the result in exactly this format:
+Analyze this crop image and respond ONLY with valid JSON.
 
-🌱 Crop Name:
-[Crop Name]
+{
+  "crop": "Crop name",
+  "disease": "Disease name",
+  "severity": "Low/Medium/High",
+  "treatment": [
+    "Treatment 1",
+    "Treatment 2",
+    "Treatment 3"
+  ],
+  "prevention": [
+    "Prevention 1",
+    "Prevention 2",
+    "Prevention 3"
+  ]
+}
 
-🦠 Disease:
-[Disease Name]
-
-⚠️ Severity:
-[Low / Medium / High]
-
-💊 Treatment:
-- Point 1
-- Point 2
-- Point 3
-
-🛡️ Prevention:
-- Point 1
-- Point 2
-- Point 3
-
-Keep the response concise, practical, and farmer-friendly.
+Do not include markdown.
+Do not include explanations.
+Return only JSON.
 `,
         },
       ],
