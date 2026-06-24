@@ -7,7 +7,7 @@ export async function GET() {
     });
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-2.0-flash",
       contents: "Reply with exactly: FarmSense AI Connected",
     });
 
@@ -17,8 +17,9 @@ export async function GET() {
     });
   } catch (error: any) {
     return Response.json({
-      success: false,
-      error: error.message,
-    });
+  success: false,
+  error:
+    "Gemini is currently busy. Please try again in a few seconds.",
+});
   }
 }

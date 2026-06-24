@@ -132,55 +132,68 @@ export default function Home() {
           )}
 
           {analysis && (
-            <div className="mt-10 grid md:grid-cols-2 gap-4">
+  <div className="mt-10 grid md:grid-cols-2 gap-6">
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg border">
-                <h3 className="font-bold text-green-700 text-xl">
-                  🌱 Crop
-                </h3>
-                <p className="mt-2">{analysis.crop}</p>
-              </div>
+    <div className="bg-white p-6 rounded-2xl shadow-xl border border-green-100">
+      <h3 className="font-bold text-green-700 text-2xl">
+        🌱 Crop
+      </h3>
+      <p className="mt-3 text-gray-900 text-lg font-semibold">
+        {analysis.crop}
+      </p>
+    </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg border">
-                <h3 className="font-bold text-red-600 text-xl">
-                  🦠 Disease
-                </h3>
-                <p className="mt-2">{analysis.disease}</p>
-              </div>
+    <div className="bg-white p-6 rounded-2xl shadow-xl border border-red-100">
+      <h3 className="font-bold text-red-600 text-2xl">
+        🦠 Disease
+      </h3>
+      <p className="mt-3 text-gray-900 text-lg font-semibold">
+        {analysis.disease}
+      </p>
+    </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg border">
-                <h3 className="font-bold text-orange-600 text-xl">
-                  ⚠️ Severity
-                </h3>
-                <p className="mt-2">{analysis.severity}</p>
-              </div>
+    <div className="bg-white p-6 rounded-2xl shadow-xl border border-orange-100">
+      <h3 className="font-bold text-orange-600 text-2xl">
+        ⚠️ Severity
+      </h3>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg border md:col-span-2">
-                <h3 className="font-bold text-blue-600 text-xl">
-                  💊 Treatment
-                </h3>
+      <span className="inline-block mt-3 px-4 py-2 rounded-full bg-orange-100 text-orange-700 font-bold">
+        {analysis.severity}
+      </span>
+    </div>
 
-                <ul className="list-disc ml-6 mt-3">
-                  {analysis.treatment?.map((item: string, i: number) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+    <div className="bg-white p-6 rounded-2xl shadow-xl border border-blue-100 md:col-span-2">
+      <h3 className="font-bold text-blue-600 text-2xl">
+        💊 Treatment
+      </h3>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg border md:col-span-2">
-                <h3 className="font-bold text-green-600 text-xl">
-                  🛡️ Prevention
-                </h3>
+      <ul className="mt-4 space-y-3 text-gray-900 text-lg">
+        {analysis.treatment?.map((item: string, i: number) => (
+          <li key={i} className="flex gap-2">
+            <span>✓</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
 
-                <ul className="list-disc ml-6 mt-3">
-                  {analysis.prevention?.map((item: string, i: number) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+    <div className="bg-white p-6 rounded-2xl shadow-xl border border-green-100 md:col-span-2">
+      <h3 className="font-bold text-green-600 text-2xl">
+        🛡️ Prevention
+      </h3>
 
-            </div>
-          )}
+      <ul className="mt-4 space-y-3 text-gray-900 text-lg">
+        {analysis.prevention?.map((item: string, i: number) => (
+          <li key={i} className="flex gap-2">
+            <span>✓</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+)}
         </div>
 
         <div className="text-center mt-8 text-gray-500">
