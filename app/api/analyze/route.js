@@ -20,18 +20,32 @@ export async function POST(req) {
           },
         },
         {
-          text: `
-Analyze this crop image.
+         text: `
+You are an agricultural expert.
 
-Return:
-1. Crop Name
-2. Disease Name (if any)
-3. Severity (Low/Medium/High)
-4. Treatment Recommendation
-5. Prevention Tips
+Analyze this crop image and return the result in exactly this format:
 
-Keep the response farmer-friendly.
-          `,
+🌱 Crop Name:
+[Crop Name]
+
+🦠 Disease:
+[Disease Name]
+
+⚠️ Severity:
+[Low / Medium / High]
+
+💊 Treatment:
+- Point 1
+- Point 2
+- Point 3
+
+🛡️ Prevention:
+- Point 1
+- Point 2
+- Point 3
+
+Keep the response concise, practical, and farmer-friendly.
+`,
         },
       ],
     });

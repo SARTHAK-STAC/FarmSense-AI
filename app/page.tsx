@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-green-50 to-green-200 flex items-center justify-center p-6">
-      <div className="bg-white/95 backdrop-blur shadow-2xl rounded-3xl p-8 w-full max-w-2xl">
+      <div className="bg-white shadow-2xl rounded-3xl p-8 w-full max-w-3xl">
         <h1 className="text-4xl font-bold text-green-700 text-center">
           🌱 FarmSense AI
         </h1>
@@ -76,12 +76,12 @@ export default function Home() {
         </button>
 
         {result && (
-  <div className="mt-8 bg-white border-2 border-green-200 shadow-md rounded-xl p-6">
+  <div className="mt-8 bg-white border border-green-300 shadow-lg rounded-2xl p-6">
     <h2 className="text-2xl font-bold text-green-700 mb-4">
       🌾 Analysis Result
     </h2>
 
-    <div className="text-gray-800 leading-8 whitespace-pre-wrap text-base">
+    <div className="whitespace-pre-wrap text-gray-900 leading-7 text-lg">
       {result}
     </div>
   </div>
